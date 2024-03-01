@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+<!-- A linha acima foi colocada nesta posição, e não como está no vídeo, para evitar
+     que seja inserida uma linha em branco no topo da página html sendo apresentada
+     pelo browser. -->
+
+{{ '<' }}{{ '!DOCTYPE html>' }}
+<!-- Como eu tinha que colocar o load como primeira linha no código, o PyCharm dá erro falso positivo.
+     A solução seria configurar o framework de trabalho o PyCharm como Django, mas isso só é
+     permitido na versão paga. Assim, vi na internet o "gorpe" de trocar a linha abaixo pela
+     linha acima. -->
+<!-- <!DOCTYPE html> -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Produto</title>
+</head>
+<body>
+    <h1>Produto</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{% url "index"%}">{{produto.nome}}</a></td>
+                <td>{{produto.preco}}</td>
+                <td>{{produto.estoque}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
